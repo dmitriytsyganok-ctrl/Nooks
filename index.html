@@ -13,13 +13,11 @@
   <header>
     <a class="logo" href="#home">nook<span>·</span></a>
     <nav><a href="#browse">Browse</a><a href="#how">How it works</a><a href="#about">About</a></nav>
-    <div class="actions"><button class="plain" data-open="auth">Log in</button><button class="button dark" data-open="auth">Join Nook ↗</button></div>
+    <div class="actions" id="headerActions"><button class="plain" id="loginButton" data-open="auth">Log in</button><button class="button dark" id="joinButton" data-open="auth">Join Nook ↗</button></div>
   </header>
 
   <main id="home">
-    <div style="background:#20251e; color:white; text-align:center; padding:14px 20px; font-family:Arial, sans-serif; font-size:14px; font-weight:bold;">
-  ✦ NOOK AUCTIONS IS COMING SOON — Local furniture finds are on the way.
-</div>
+    <div class="launch-banner"><span>✦</span> Nook Auctions is coming soon. We’re getting ready to bring great furniture finds to your neighborhood.</div>
     <section class="hero">
       <div class="hero-copy">
         <p class="eyebrow">Furniture deserves another story</p>
@@ -65,10 +63,11 @@
     <section class="modal listing-modal"><button class="close">×</button><div class="listing-layout"><div class="modal-image"><img id="modalImage" alt=""><button class="heart">♡</button></div><div class="listing-copy"><p class="eyebrow" id="modalCategory"></p><h2 id="modalTitle"></h2><p class="seller">Listed by <b id="modalSeller"></b> · <span>● Verified seller</span></p><div class="bid-status"><div><small>Current bid</small><strong id="modalPrice"></strong><em id="modalBids"></em></div><div><small>Time remaining</small><strong class="time" id="modalTime"></strong></div></div><p class="description">A well-loved, carefully kept piece ready for its next home. Pickup details and condition notes are confirmed with the seller before you bid.</p><div class="bid-controls"><button id="minus">−</button><div><small>Your bid</small><strong id="yourBid"></strong></div><button id="plus">+</button><button class="button coral" id="placeBid">Place bid →</button></div><p class="note">You’ll only be charged if you win.</p></div></div></section>
   </div>
 
-  <div class="overlay" id="authOverlay"><section class="modal auth"><button class="close">×</button><p class="eyebrow">Welcome to Nook</p><h2>Good finds await.</h2><p>Sign in to bid, save pieces, and start selling.</p><button>G &nbsp; Continue with Google</button><button> &nbsp; Continue with Apple</button><div class="or">or</div><label>Email address<input placeholder="you@example.com" type="email"></label><button class="button dark">Continue with email →</button></section></div>
+  <div class="overlay" id="authOverlay"><section class="modal auth"><button class="close">×</button><p class="eyebrow" id="authEyebrow">Welcome to Nook</p><h2 id="authTitle">Good finds await.</h2><p id="authIntro">Create an account to save pieces and be ready when auctions launch.</p><form id="authForm"><label id="nameField">First name<input id="authName" placeholder="Alex" type="text" autocomplete="given-name"></label><label>Email address<input id="authEmail" placeholder="you@example.com" type="email" autocomplete="email" required></label><label>Password<input id="authPassword" placeholder="At least 8 characters" type="password" autocomplete="new-password" minlength="8" required></label><p class="auth-message" id="authMessage" aria-live="polite"></p><button class="button dark" id="authSubmit" type="submit">Create account →</button></form><button class="auth-switch" id="authSwitch" type="button">Already have an account? Log in</button></section></div>
 
   <section class="dashboard" id="dashboard"><div class="dashbar"><button id="back">← Back to Nook</button><a class="logo" href="#home">nook<span>·</span></a><button data-open="auth">Log out</button></div><div class="dashbody"><aside><p class="eyebrow">Your space</p><h2>Hi, Alex.</h2><b>Overview</b><a>Watching <span>3</span></a><a>Bids & offers</a><a>Your listings</a><a>Purchases</a><a>Settings</a></aside><div class="dashmain"><div class="dashhead"><div><p class="eyebrow">Seller dashboard</p><h1>Good morning, Alex.</h1></div><button class="button coral" id="create">+ List a piece</button></div><div class="stats"><div><small>Active listings</small><strong>04</strong><em>2 ending this week</em></div><div><small>Current bids</small><strong>12</strong><em>↑ 4 since yesterday</em></div><div><small>Your earnings</small><strong>$1,284</strong><em>Across 8 sales</em></div></div><h2>Active listings</h2><div id="dashList"></div></div></div></section>
   <div class="toast" id="toast">Your bid has been placed! ✦</div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="app.js"></script>
 </body>
 </html>
