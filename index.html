@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nook — Furniture finds, rehomed</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <a class="logo" href="#home">nook<span>·</span></a>
+    <nav><a href="#browse">Browse</a><a href="#how">How it works</a><a href="#about">About</a></nav>
+    <div class="actions"><button class="plain" data-open="auth">Log in</button><button class="button dark" data-open="auth">Join Nook ↗</button></div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Furniture deserves another story</p>
+        <h1>Find the piece<br>that <em>feels</em> like home.</h1>
+        <p>Bid on one-of-a-kind furniture from people in your community. Good design, better second chances.</p>
+        <div class="hero-actions"><a class="button coral" href="#browse">Explore auctions →</a><button class="underlined" id="sellButton">Sell something ↗</button></div>
+        <small>✦ New finds added every day · Buy local, live beautifully</small>
+      </div>
+      <div class="hero-art">
+        <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1200&q=85" alt="Warm modern living room">
+        <span class="tag top">Curated by people, not algorithms ✦</span>
+        <span class="tag bottom"><b>6,412</b><br>pieces found new homes</span>
+      </div>
+    </section>
+
+    <section class="categories">
+      <a href="#browse" data-category="Seating">⌁ Seating</a><a href="#browse" data-category="Tables">⌑ Tables</a><a href="#browse" data-category="Storage">▤ Storage</a><a href="#browse" data-category="Lighting">◔ Lighting</a><a href="#browse" data-category="Decor">✦ Decor</a><a href="#browse">⌇ Outdoor</a>
+    </section>
+
+    <section class="listings" id="browse">
+      <div class="section-head"><div><p class="eyebrow">Fresh on Nook</p><h2>Worth waking up for.</h2></div><a class="underlined" href="#browse">See all auctions →</a></div>
+      <div class="filters">
+        <button class="active" data-filter="All">All pieces</button><button data-filter="Seating">Seating</button><button data-filter="Tables">Tables</button><button data-filter="Storage">Storage</button><button data-filter="Lighting">Lighting</button><button data-filter="Decor">Decor</button>
+      </div>
+      <div class="grid" id="grid"></div>
+    </section>
+
+    <section class="how" id="how">
+      <div><p class="eyebrow">Simple by design</p><h2>A better way to<br><em>let go & find more.</em></h2><p>Whether you’re clearing space or making it yours, Nook keeps it personal, local, and refreshingly easy.</p></div>
+      <div class="steps">
+        <article><span>01</span><i>⌕</i><h3>Discover a good one</h3><p>Browse pieces with history, personality, and plenty of life left in them.</p></article>
+        <article><span>02</span><i>♧</i><h3>Bid with confidence</h3><p>Place a bid, save favorites, and get notified when the action heats up.</p></article>
+        <article><span>03</span><i>⌂</i><h3>Make it yours</h3><p>Meet locally or arrange delivery, then give it the next chapter it deserves.</p></article>
+      </div>
+    </section>
+
+    <section class="sell-cta" id="about"><div><p class="eyebrow">Your turn to pass it on</p><h2>Have a piece with<br>a story to tell?</h2><p>List it in minutes. It’s free to start, and you set the pace.</p><button class="button light" id="sellButton2">Start selling →</button></div><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1000&q=85" alt="A sunlit styled room"></section>
+  </main>
+
+  <footer><a class="logo" href="#home">nook<span>·</span></a><p>Furniture finds, rehomed.</p><small>© 2026 Nook. Made for good homes.</small></footer>
+
+  <div class="overlay" id="listingOverlay">
+    <section class="modal listing-modal"><button class="close">×</button><div class="listing-layout"><div class="modal-image"><img id="modalImage" alt=""><button class="heart">♡</button></div><div class="listing-copy"><p class="eyebrow" id="modalCategory"></p><h2 id="modalTitle"></h2><p class="seller">Listed by <b id="modalSeller"></b> · <span>● Verified seller</span></p><div class="bid-status"><div><small>Current bid</small><strong id="modalPrice"></strong><em id="modalBids"></em></div><div><small>Time remaining</small><strong class="time" id="modalTime"></strong></div></div><p class="description">A well-loved, carefully kept piece ready for its next home. Pickup details and condition notes are confirmed with the seller before you bid.</p><div class="bid-controls"><button id="minus">−</button><div><small>Your bid</small><strong id="yourBid"></strong></div><button id="plus">+</button><button class="button coral" id="placeBid">Place bid →</button></div><p class="note">You’ll only be charged if you win.</p></div></div></section>
+  </div>
+
+  <div class="overlay" id="authOverlay"><section class="modal auth"><button class="close">×</button><p class="eyebrow">Welcome to Nook</p><h2>Good finds await.</h2><p>Sign in to bid, save pieces, and start selling.</p><button>G &nbsp; Continue with Google</button><button> &nbsp; Continue with Apple</button><div class="or">or</div><label>Email address<input placeholder="you@example.com" type="email"></label><button class="button dark">Continue with email →</button></section></div>
+
+  <section class="dashboard" id="dashboard"><div class="dashbar"><button id="back">← Back to Nook</button><a class="logo" href="#home">nook<span>·</span></a><button data-open="auth">Log out</button></div><div class="dashbody"><aside><p class="eyebrow">Your space</p><h2>Hi, Alex.</h2><b>Overview</b><a>Watching <span>3</span></a><a>Bids & offers</a><a>Your listings</a><a>Purchases</a><a>Settings</a></aside><div class="dashmain"><div class="dashhead"><div><p class="eyebrow">Seller dashboard</p><h1>Good morning, Alex.</h1></div><button class="button coral" id="create">+ List a piece</button></div><div class="stats"><div><small>Active listings</small><strong>04</strong><em>2 ending this week</em></div><div><small>Current bids</small><strong>12</strong><em>↑ 4 since yesterday</em></div><div><small>Your earnings</small><strong>$1,284</strong><em>Across 8 sales</em></div></div><h2>Active listings</h2><div id="dashList"></div></div></div></section>
+  <div class="toast" id="toast">Your bid has been placed! ✦</div>
+  <script src="app.js"></script>
+</body>
+</html>
